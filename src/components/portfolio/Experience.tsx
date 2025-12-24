@@ -5,41 +5,48 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    title: "Senior Full-Stack Developer",
-    company: "Tech Innovations Inc.",
-    period: "2022 - Present",
-    description: "Leading development of enterprise applications, mentoring junior developers, and implementing best practices.",
+    title: "MERN Stack Developer Training",
+    company: "Hoping Minds, Mohali",
+    period: "2024 - 45 Days",
+    description: "Completed hands-on training in MERN stack, focusing on modern web application architecture. Gained practical experience in frontend and backend integration, REST APIs.",
   },
   {
     type: "work",
-    title: "Full-Stack Developer",
-    company: "Digital Solutions Co.",
-    period: "2020 - 2022",
-    description: "Built scalable web applications using React and Node.js, improved performance by 40%.",
+    title: "Campus Ambassador",
+    company: "LaunchED Global",
+    period: "Sep 2025",
+    description: "Representing LaunchED Global on campus, promoting entrepreneurship and innovation among students.",
   },
   {
     type: "work",
-    title: "Junior Developer",
-    company: "StartUp Labs",
-    period: "2019 - 2020",
-    description: "Developed features for SaaS products, collaborated with design team on UI/UX improvements.",
+    title: "Event Coordinator",
+    company: "CGC Landran",
+    period: "2024 - 2025",
+    description: "Served as Coordinator for National Science Day 2024 and Freshers 2025. Actively participated in events like Eminence, Code-Rush, HackHeist and Zest-o-Festa.",
   },
 ];
 
 const education = [
   {
     type: "education",
-    title: "Master's in Computer Science",
-    company: "Stanford University",
-    period: "2017 - 2019",
-    description: "Specialized in Software Engineering and Machine Learning.",
+    title: "B.Tech in Information Technology",
+    company: "Chandigarh Group of Colleges, Landran",
+    period: "2023 - 2027",
+    description: "Currently pursuing IT Engineering with 8.15 CGPA. Secured 5 Star badge at HackerRank in Java and 50 days completed badge at LeetCode.",
   },
   {
     type: "education",
-    title: "Bachelor's in Computer Science",
-    company: "MIT",
-    period: "2013 - 2017",
-    description: "Dean's List, focused on algorithms and data structures.",
+    title: "Intermediate (12th - BSEB)",
+    company: "A.S.R.L.S College, Nabiganj Bazar, Siwan",
+    period: "2020 - 2021",
+    description: "Completed with 71% marks. Secured 2nd Position at District level in GK & GS in 2019.",
+  },
+  {
+    type: "education",
+    title: "Matriculation (10th - BSEB)",
+    company: "+2 High School, Nabiganj Bazar, Siwan",
+    period: "2018 - 2019",
+    description: "Completed with 80% marks.",
   },
 ];
 
