@@ -9,10 +9,10 @@ export const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { label: "Years Experience", value: "5+" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Happy Clients", value: "30+" },
-    { label: "Technologies", value: "20+" },
+    { label: "CGPA", value: "8.15" },
+    { label: "Projects", value: "5+" },
+    { label: "Technologies", value: "15+" },
+    { label: "Certifications", value: "3+" },
   ];
 
   return (
@@ -61,18 +61,17 @@ export const About = () => {
           >
             <div className="space-y-4">
               <h3 className="text-2xl font-display font-semibold">
-                Passionate Backend Developer
+                IT Undergraduate & Software Developer
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm Akash Kumar Yadav, a backend developer with expertise in building 
-                scalable, high-performance server-side applications. My journey started 
-                with a curiosity for how systems work under the hood, and has evolved 
-                into a passion for crafting robust APIs and microservices.
+                I'm Akash Kumar Yadav, a motivated Information Technology undergraduate at 
+                Chandigarh Group of Colleges, Landran (2023-2027). With strong analytical and 
+                problem-solving skills, I'm passionate about software development and cloud technologies.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I specialize in Java, Spring Boot, Node.js, and cloud technologies like Docker 
-                and AWS. I believe in writing clean, maintainable code and designing systems 
-                that can handle millions of requests efficiently.
+                I specialize in Core Java, C++, JavaScript, and the MERN Stack. I've completed 
+                hands-on training in modern web development and secured a 5-star badge on HackerRank 
+                in Java. I believe in building efficient, scalable, and user-friendly solutions.
               </p>
             </div>
 
@@ -80,22 +79,24 @@ export const About = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 glass-card px-4 py-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-sm">India</span>
+                <span className="text-sm">Mohali, Punjab, India</span>
               </div>
               <div className="flex items-center gap-2 glass-card px-4 py-2">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span className="text-sm">Available for hire</span>
+                <span className="text-sm">B.Tech IT (2023-2027)</span>
               </div>
               <div className="flex items-center gap-2 glass-card px-4 py-2">
                 <Code className="h-4 w-4 text-primary" />
-                <span className="text-sm">Open to remote work</span>
+                <span className="text-sm">Open to internships</span>
               </div>
             </div>
 
             {/* Download Resume */}
-            <Button variant="hero" className="mt-6">
-              <Download className="h-4 w-4 mr-2" />
-              Download Resume
+            <Button variant="hero" className="mt-6" asChild>
+              <a href="/Akash_Kumar_Yadav_Resume.pdf" download>
+                <Download className="h-4 w-4 mr-2" />
+                Download Resume
+              </a>
             </Button>
           </motion.div>
         </div>
