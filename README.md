@@ -47,9 +47,25 @@ cd <YOUR_PROJECT_NAME>
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Supabase credentials
+
 # Start development server
 npm run dev
 ```
+
+## ⚙️ Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+VITE_SUPABASE_URL="https://your-project-id.supabase.co"
+VITE_SUPABASE_PUBLISHABLE_KEY="your-anon-key"
+VITE_SUPABASE_PROJECT_ID="your-project-id"
+```
+
+You can get these values from your Supabase project settings.
 
 ## 📧 Contact
 
