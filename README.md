@@ -55,9 +55,9 @@ npm run dev
 
 Feel free to reach out for collaborations or opportunities!
 
-- **Email:** akashyadav.dev@gmail.com
-- **LinkedIn:** [Akash Kumar Yadav](https://linkedin.com/in/akash-kumar-yadav)
-- **GitHub:** [akashyadav](https://github.com/akashyadav)
+- **Email:** akashw6666@gmail.com
+- **LinkedIn:** [Akash Kumar Yadav](www.linkedin.com/in/akash-yadav-878906286)
+- **GitHub:** [akashyadav](https://github.com/akashray398)
 
 ---
 
