@@ -1,38 +1,13 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Vue.js", level: 75 },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 90 },
-      { name: "Java", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "Express", level: 88 },
-      { name: "Spring Boot", level: 82 },
-    ],
-  },
-  {
-    title: "Tools & Others",
-    skills: [
-      { name: "Git", level: 92 },
-      { name: "Docker", level: 78 },
-      { name: "AWS", level: 75 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "MongoDB", level: 82 },
-    ],
-  },
-];
+interface Skill {
+  id: string;
+  name: string;
+  category: string;
+  level: number;
+}
 
 const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: number }) => {
   const ref = useRef(null);
@@ -65,6 +40,35 @@ const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: 
 export const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const { data, error } = await supabase
+        .from('skills')
+        .select('*')
+        .order('display_order');
+      
+      if (data && !error) {
+        setSkills(data);
+      }
+      setLoading(false);
+    };
+
+    fetchSkills();
+  }, []);
+
+  // Group skills by category
+  const skillCategories = skills.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, Skill[]>);
+
+  const categories = Object.entries(skillCategories);
 
   return (
     <section id="skills" className="py-20 md:py-32 relative bg-secondary/20">
@@ -83,31 +87,41 @@ export const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="glass-card p-6 space-y-6"
-            >
-              <h3 className="text-xl font-display font-semibold text-center">
-                {category.title}
-              </h3>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillBar
-                    key={skill.name}
-                    name={skill.name}
-                    level={skill.level}
-                    delay={categoryIndex * 0.1 + skillIndex * 0.05}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          </div>
+        ) : categories.length === 0 ? (
+          <div className="text-center text-muted-foreground">
+            No skills added yet. Add skills from the admin panel.
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categories.map(([categoryName, categorySkills], categoryIndex) => (
+              <motion.div
+                key={categoryName}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                className="glass-card p-6 space-y-6"
+              >
+                <h3 className="text-xl font-display font-semibold text-center">
+                  {categoryName}
+                </h3>
+                <div className="space-y-4">
+                  {categorySkills.map((skill, skillIndex) => (
+                    <SkillBar
+                      key={skill.id}
+                      name={skill.name}
+                      level={skill.level}
+                      delay={categoryIndex * 0.1 + skillIndex * 0.05}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

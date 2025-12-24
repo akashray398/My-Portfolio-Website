@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -16,6 +18,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isDark, setIsDark] = useState(true);
+  const { user, isAdmin } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,6 +96,15 @@ export const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
+            {isAdmin && (
+              <Link to="/admin">
+                <Button variant="ghost" size="sm" className="hidden md:flex items-center gap-2">
+                  <Shield className="h-4 w-4" />
+                  Admin
+                </Button>
+              </Link>
+            )}
+            
             <Button
               variant="ghost"
               size="icon"

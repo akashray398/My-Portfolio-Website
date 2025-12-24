@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const roles = ["Full-Stack Developer", "UI/UX Designer", "Java Developer"];
+const roles = ["Backend Developer", "Java Developer", "Cloud Enthusiast"];
 
 export const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -84,7 +84,7 @@ export const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-display font-bold"
           >
             Hi, I'm{" "}
-            <span className="gradient-text">John Doe</span>
+            <span className="gradient-text">Akash Kumar Yadav</span>
           </motion.h1>
 
           {/* Typing Animation */}
