@@ -6,7 +6,7 @@ export const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/akashray398", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/akashray398", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/akash-yadav-878906286", label: "LinkedIn" },
     { icon: Twitter, href: "https://twitter.com/akashray398", label: "Twitter" },
   ];
 
@@ -36,6 +36,8 @@ export const Footer = () => {
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -2 }}
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
                 aria-label={social.label}
