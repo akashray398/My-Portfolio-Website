@@ -1,66 +1,64 @@
-# Welcome to My porfolio project
+# Akash Kumar Yadav - Portfolio
 
-## Project info
+A modern, responsive portfolio website showcasing my skills, projects, and professional experience as a software developer.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Live Demo
 
-## How can I edit this code?
+Visit the live portfolio at your deployed URL.
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use Lovable**
+- **Responsive Design** - Optimized for all devices
+- **Dark/Light Mode** - Theme toggle for user preference
+- **Interactive UI** - Smooth animations and transitions
+- **Contact Form** - Direct messaging functionality
+- **Admin Panel** - Content management system
+- **SEO Optimized** - Meta tags and structured data
 
+## 🛠️ Tech Stack
 
-Changes made via me will be committed automatically to this repo.
+- **Frontend:** React 18, TypeScript, Vite
+- **Styling:** Tailwind CSS, shadcn/ui
+- **Animations:** Framer Motion
+- **Backend:** Supabase (Database, Auth, Storage)
+- **Deployment:** Lovable Cloud
 
-**Use your preferred IDE**
+## 📁 Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in vs code.
+```
+src/
+├── components/
+│   ├── portfolio/    # Main portfolio sections
+│   └── ui/           # Reusable UI components
+├── pages/            # Route pages
+├── hooks/            # Custom React hooks
+└── integrations/     # Backend integrations
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🏃‍♂️ Running Locally
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📧 Contact
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Feel free to reach out for collaborations or opportunities!
 
-**Use GitHub Codespaces**
+- **Email:** akashyadav.dev@gmail.com
+- **LinkedIn:** [Akash Kumar Yadav](https://linkedin.com/in/akash-kumar-yadav)
+- **GitHub:** [akashyadav](https://github.com/akashyadav)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ by Akash Kumar Yadav
