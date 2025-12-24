@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/profile-photo.jpeg";
 
 const roles = ["Software Developer", "MERN Stack Developer", "Java Developer"];
 
@@ -58,13 +59,32 @@ export const Hero = () => {
         }}
       />
 
-      <div className="section-container relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
-        >
+      <div className="section-container relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl">
+              <img
+                src={profilePhoto}
+                alt="Akash Kumar Yadav"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none" />
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-center lg:text-left"
+          >
           {/* Greeting */}
           <motion.p
             initial={{ opacity: 0 }}
@@ -144,6 +164,7 @@ export const Hero = () => {
             ))}
           </motion.div>
         </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
