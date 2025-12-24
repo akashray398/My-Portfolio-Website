@@ -25,7 +25,7 @@ export const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            { © {currentYear} Made with{" 🫶"} }
+            © {currentYear} Made with
             <Heart className="h-4 w-4 text-destructive fill-destructive" /> by
             Akash Yadav
           </p>
