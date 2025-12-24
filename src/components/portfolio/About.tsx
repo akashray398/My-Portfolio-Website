@@ -61,18 +61,18 @@ export const About = () => {
           >
             <div className="space-y-4">
               <h3 className="text-2xl font-display font-semibold">
-                Passionate Developer & Designer
+                Passionate Backend Developer
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm a full-stack developer with over 5 years of experience creating 
-                web applications that blend beautiful design with powerful functionality. 
-                My journey started with a curiosity for how things work on the web, 
-                and has evolved into a passion for building impactful digital experiences.
+                I'm Akash Kumar Yadav, a backend developer with expertise in building 
+                scalable, high-performance server-side applications. My journey started 
+                with a curiosity for how systems work under the hood, and has evolved 
+                into a passion for crafting robust APIs and microservices.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I specialize in React, Node.js, and Java, with a keen eye for UI/UX design. 
-                I believe in writing clean, maintainable code and creating intuitive 
-                user interfaces that make technology accessible to everyone.
+                I specialize in Java, Spring Boot, Node.js, and cloud technologies like Docker 
+                and AWS. I believe in writing clean, maintainable code and designing systems 
+                that can handle millions of requests efficiently.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export const About = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 glass-card px-4 py-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-sm">San Francisco, CA</span>
+                <span className="text-sm">India</span>
               </div>
               <div className="flex items-center gap-2 glass-card px-4 py-2">
                 <Calendar className="h-4 w-4 text-primary" />
