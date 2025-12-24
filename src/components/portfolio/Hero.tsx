@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const roles = ["Backend Developer", "Java Developer", "Cloud Enthusiast"];
+const roles = ["Software Developer", "MERN Stack Developer", "Java Developer"];
 
 export const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -36,10 +36,9 @@ export const Hero = () => {
   }, [displayText, isDeleting, roleIndex]);
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "#contact", label: "Email" },
+    { icon: Github, href: "https://github.com/akashray398", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/akash-yadav-878906286", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:akashw6666@gmail.com", label: "Email" },
   ];
 
   return (
@@ -105,8 +104,8 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-muted-foreground max-w-xl mx-auto text-lg"
           >
-            Crafting beautiful, performant web experiences with modern technologies. 
-            Let's build something amazing together.
+            Motivated IT undergraduate passionate about software development and cloud technologies. 
+            Building efficient, scalable, and user-friendly solutions.
           </motion.p>
 
           {/* CTA Buttons */}
