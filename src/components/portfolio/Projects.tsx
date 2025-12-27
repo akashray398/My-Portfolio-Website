@@ -89,164 +89,105 @@ export const Projects = () => {
             No projects added yet. Add projects from the admin panel.
           </div>
         ) : (
-          <>
-            {/* Completed & In-Progress Projects */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects
-                .filter((p) => getProjectStatus(p.title) !== "upcoming")
-                .map((project, index) => (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                    className="glass-card overflow-hidden group"
-                  >
-                    {/* Project Image */}
-                    <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-6xl relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <motion.span
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        {getProjectEmoji(project.title)}
-                      </motion.span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => {
+              const status = getProjectStatus(project.title);
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className={`glass-card overflow-hidden group ${status === "upcoming" ? "border-2 border-dashed border-primary/30" : ""}`}
+                >
+                  {/* Project Image */}
+                  <div className={`h-48 flex items-center justify-center text-6xl relative overflow-hidden ${status === "upcoming" ? "bg-gradient-to-br from-blue-500/10 to-primary/10" : "bg-gradient-to-br from-primary/10 to-accent/10"}`}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <motion.span
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      {getProjectEmoji(project.title)}
+                    </motion.span>
+                    {status === "upcoming" && (
+                      <div className="absolute top-3 right-3">
+                        <span className="px-3 py-1 text-xs bg-blue-500/20 text-blue-400 rounded-full font-medium border border-blue-500/30">
+                          Coming Soon
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      {status === "in-progress" && (
+                        <span className="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-500 rounded-full font-medium whitespace-nowrap">
+                          Currently Working
+                        </span>
+                      )}
+                      {status === "upcoming" && (
+                        <span className="px-2 py-1 text-xs bg-blue-500/20 text-blue-400 rounded-full font-medium whitespace-nowrap">
+                          Upcoming
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-muted-foreground text-sm line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech_stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs bg-secondary rounded-md text-muted-foreground"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
 
-                    {/* Content */}
-                    <div className="p-6 space-y-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        {getProjectStatus(project.title) === "in-progress" && (
-                          <span className="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-500 rounded-full font-medium">
-                            Currently Working
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-muted-foreground text-sm line-clamp-2">
-                        {project.description}
-                      </p>
-
-                      {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech_stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 text-xs bg-secondary rounded-md text-muted-foreground"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Links */}
-                      <div className="flex gap-3 pt-2">
-                        {project.github_url && (
-                          <Button variant="ghost" size="sm" asChild className="flex-1">
-                            <a href={project.github_url} target="_blank" rel="noopener noreferrer">
-                              <Github className="h-4 w-4 mr-2" />
-                              Code
-                            </a>
-                          </Button>
-                        )}
-                        {project.live_url && (
-                          <Button variant="default" size="sm" asChild className="flex-1">
-                            <a href={project.live_url} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="h-4 w-4 mr-2" />
-                              Demo
-                            </a>
-                          </Button>
-                        )}
-                        {!project.github_url && !project.live_url && (
-                          <span className="text-muted-foreground text-sm">Coming soon</span>
-                        )}
-                      </div>
+                    {/* Links / Status */}
+                    <div className="flex gap-3 pt-2">
+                      {status === "upcoming" ? (
+                        <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                          <span className="inline-block w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                          In Planning Phase
+                        </div>
+                      ) : (
+                        <>
+                          {project.github_url && (
+                            <Button variant="ghost" size="sm" asChild className="flex-1">
+                              <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+                                <Github className="h-4 w-4 mr-2" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                          {project.live_url && (
+                            <Button variant="default" size="sm" asChild className="flex-1">
+                              <a href={project.live_url} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                Demo
+                              </a>
+                            </Button>
+                          )}
+                          {!project.github_url && !project.live_url && (
+                            <span className="text-muted-foreground text-sm">Coming soon</span>
+                          )}
+                        </>
+                      )}
                     </div>
-                  </motion.div>
-                ))}
-            </div>
-
-            {/* Upcoming Projects Section */}
-            {projects.filter((p) => getProjectStatus(p.title) === "upcoming").length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-16"
-              >
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">
-                    Upcoming <span className="gradient-text">Projects</span>
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Exciting projects in the pipeline
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {projects
-                    .filter((p) => getProjectStatus(p.title) === "upcoming")
-                    .map((project, index) => (
-                      <motion.div
-                        key={project.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                        whileHover={{ y: -5 }}
-                        className="glass-card overflow-hidden group border-2 border-dashed border-primary/30"
-                      >
-                        {/* Project Image */}
-                        <div className="h-48 bg-gradient-to-br from-blue-500/10 to-primary/10 flex items-center justify-center text-6xl relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                          <motion.span
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
-                            {getProjectEmoji(project.title)}
-                          </motion.span>
-                          <div className="absolute top-3 right-3">
-                            <span className="px-3 py-1 text-xs bg-blue-500/20 text-blue-400 rounded-full font-medium border border-blue-500/30">
-                              Coming Soon
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="p-6 space-y-4">
-                          <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
-                            {project.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm line-clamp-2">
-                            {project.description}
-                          </p>
-
-                          {/* Tech Stack */}
-                          <div className="flex flex-wrap gap-2">
-                            {project.tech_stack.map((tech) => (
-                              <span
-                                key={tech}
-                                className="px-2 py-1 text-xs bg-secondary rounded-md text-muted-foreground"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-
-                          {/* Status */}
-                          <div className="flex items-center gap-2 pt-2 text-muted-foreground text-sm">
-                            <span className="inline-block w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-                            In Planning Phase
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                </div>
-              </motion.div>
-            )}
-          </>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         )}
       </div>
     </section>
