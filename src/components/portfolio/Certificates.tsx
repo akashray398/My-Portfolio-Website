@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import zestOFiesta from "@/assets/certificates/zest-o-fiesta.jpeg";
 import accentureForage from "@/assets/certificates/accenture-forage.jpeg";
 import mongodbAiAgents from "@/assets/certificates/mongodb-ai-agents.jpeg";
+import awsDataEngineering from "@/assets/certificates/aws-data-engineering.jpeg";
+import bgmiEminece from "@/assets/certificates/bgmi-eminece.jpeg";
+import awsCloudOperations from "@/assets/certificates/aws-cloud-operations.jpeg";
+import hackheist from "@/assets/certificates/hackheist.jpeg";
+import flutterSimplilearn from "@/assets/certificates/flutter-simplilearn.jpeg";
+import awsGenerativeAi from "@/assets/certificates/aws-generative-ai.jpeg";
+import gitUdemy from "@/assets/certificates/git-udemy.jpeg";
+import sih2024 from "@/assets/certificates/sih-2024.jpeg";
 
 interface Certificate {
   id: string;
@@ -19,24 +27,84 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: "1",
-    title: "Zest-O-fiesta 2024 - Certificate of Participation",
-    issuer: "CEC-CGC Landran (Chandigarh Engineering College)",
-    date: "2024",
-    imageUrl: zestOFiesta,
+    title: "AWS Academy Graduate - Data Engineering",
+    issuer: "AWS Academy",
+    date: "November 2023",
+    imageUrl: awsDataEngineering,
+    credentialUrl: "https://www.credly.com/go/7a06H8eN",
   },
   {
     id: "2",
+    title: "AWS Academy Graduate - Cloud Operations",
+    issuer: "AWS Academy",
+    date: "March 2025",
+    imageUrl: awsCloudOperations,
+    credentialUrl: "https://www.credly.com/go/iB2PJzji",
+  },
+  {
+    id: "3",
+    title: "AWS Academy Graduate - Generative AI Foundations",
+    issuer: "AWS Academy",
+    date: "November 2025",
+    imageUrl: awsGenerativeAi,
+    credentialUrl: "https://www.credly.com/badges/fb34e5df-5005-43ef-8514-1e926a589ebe",
+  },
+  {
+    id: "4",
     title: "Software Engineering Job Simulation",
     issuer: "Accenture via Forage",
     date: "September 2025",
     imageUrl: accentureForage,
   },
   {
-    id: "3",
+    id: "5",
     title: "AI Agents with MongoDB",
     issuer: "MongoDB",
     date: "August 2025",
     imageUrl: mongodbAiAgents,
+  },
+  {
+    id: "6",
+    title: "Introduction to Flutter Course",
+    issuer: "Simplilearn SkillUp",
+    date: "July 2025",
+    imageUrl: flutterSimplilearn,
+  },
+  {
+    id: "7",
+    title: "GIT, GitLab, GitHub Fundamentals for Software Developers",
+    issuer: "Udemy",
+    date: "July 2025",
+    imageUrl: gitUdemy,
+    credentialUrl: "https://ude.my/UC-23ee7eab-f365-49ee-8d34-cd91d3bb87bf",
+  },
+  {
+    id: "8",
+    title: "Smart India Hackathon 2024 - Team DigiDreamers",
+    issuer: "CGC College of Engineering",
+    date: "September 2024",
+    imageUrl: sih2024,
+  },
+  {
+    id: "9",
+    title: "HackHeist - Certificate of Appreciation",
+    issuer: "CGC Landran",
+    date: "2024",
+    imageUrl: hackheist,
+  },
+  {
+    id: "10",
+    title: "Zest-O-fiesta 2024 - Certificate of Participation",
+    issuer: "CEC-CGC Landran",
+    date: "2024",
+    imageUrl: zestOFiesta,
+  },
+  {
+    id: "11",
+    title: "BGMI Event - EMINECE 2K24",
+    issuer: "CEC-CGC Landran, Dept. of IT",
+    date: "2024",
+    imageUrl: bgmiEminece,
   },
 ];
 
