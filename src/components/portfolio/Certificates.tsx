@@ -3,6 +3,10 @@ import { motion, useInView } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import zestOFiesta from "@/assets/certificates/zest-o-fiesta.jpeg";
+import accentureForage from "@/assets/certificates/accenture-forage.jpeg";
+import mongodbAiAgents from "@/assets/certificates/mongodb-ai-agents.jpeg";
+
 interface Certificate {
   id: string;
   title: string;
@@ -12,15 +16,27 @@ interface Certificate {
   credentialUrl?: string;
 }
 
-// TODO: Replace with your actual certificates
 const certificates: Certificate[] = [
   {
     id: "1",
-    title: "Certificate Name",
-    issuer: "Issuing Organization",
+    title: "Zest-O-fiesta 2024 - Certificate of Participation",
+    issuer: "CEC-CGC Landran (Chandigarh Engineering College)",
     date: "2024",
-    imageUrl: "/placeholder.svg",
-    credentialUrl: "#",
+    imageUrl: zestOFiesta,
+  },
+  {
+    id: "2",
+    title: "Software Engineering Job Simulation",
+    issuer: "Accenture via Forage",
+    date: "September 2025",
+    imageUrl: accentureForage,
+  },
+  {
+    id: "3",
+    title: "AI Agents with MongoDB",
+    issuer: "MongoDB",
+    date: "August 2025",
+    imageUrl: mongodbAiAgents,
   },
 ];
 
