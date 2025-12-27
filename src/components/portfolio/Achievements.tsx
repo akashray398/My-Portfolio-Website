@@ -46,9 +46,6 @@ export const Achievements = () => {
     },
   ];
 
-  // GitHub username - replace with actual username
-  const githubUsername = "akashray398";
-  
   // LeetCode username - replace with actual username
   const leetcodeUsername = "akashray398";
 
@@ -67,46 +64,6 @@ export const Achievements = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             My coding journey, accomplishments, and competitive programming stats
           </p>
-        </motion.div>
-
-        {/* GitHub Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
-        >
-          <h3 className="text-xl font-display font-semibold text-center mb-6">
-            GitHub <span className="text-primary">Statistics</span>
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="glass-card p-4 flex justify-center items-center">
-              <img
-                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9`}
-                alt="GitHub Stats"
-                className="w-full max-w-md"
-                loading="lazy"
-              />
-            </div>
-            <div className="glass-card p-4 flex justify-center items-center">
-              <img
-                src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=58a6ff&fire=ff6b6b&currStreakLabel=c9d1d9`}
-                alt="GitHub Streak"
-                className="w-full max-w-md"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div className="flex justify-center mt-6">
-            <div className="glass-card p-4">
-              <img
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9`}
-                alt="Top Languages"
-                className="w-full max-w-md"
-                loading="lazy"
-              />
-            </div>
-          </div>
         </motion.div>
 
         {/* Coding Platform Badges */}
