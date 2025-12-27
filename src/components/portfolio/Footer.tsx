@@ -20,7 +20,7 @@ export const Footer = () => {
             className="text-xl font-display font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            Akash
           </motion.a>
 
           {/* Copyright */}

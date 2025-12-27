@@ -12,7 +12,7 @@ export const About = () => {
     { label: "CGPA", value: "8.15" },
     { label: "Projects", value: "5+" },
     { label: "Technologies", value: "15+" },
-    { label: "Certifications", value: "3+" },
+    { label: "Certifications", value: "20+" },
   ];
 
   return (

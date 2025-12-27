@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -67,7 +68,7 @@ export const Navbar = () => {
             className="text-xl md:text-2xl font-display font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            Akash
           </motion.a>
 
           {/* Desktop Navigation */}

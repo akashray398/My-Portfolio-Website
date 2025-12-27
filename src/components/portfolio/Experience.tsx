@@ -5,24 +5,35 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const experiences = [
   {
     type: "work",
-    title: "MERN Stack Developer Training",
-    company: "Hoping Minds, Mohali",
-    period: "2024 - 45 Days",
-    description: "Completed hands-on training in MERN stack, focusing on modern web application architecture. Gained practical experience in frontend and backend integration, REST APIs.",
+    title: "Placement Ambassador",
+    company: "Chandigarh Group of Colleges, Landran",
+    period: "Dec 2025 - Present",
+    order: 1,
+    description: "Leading campus placement initiatives by connecting 500+ students with top recruiters. Organizing pre-placement training sessions, coordinating company visits, and mentoring peers on resume building & interview preparation. Achieved 15% increase in student placement awareness.",
   },
   {
     type: "work",
     title: "Campus Ambassador",
     company: "LaunchED Global",
     period: "Sep 2025",
-    description: "Representing LaunchED Global on campus, promoting entrepreneurship and innovation among students.",
+    order: 2,
+    description: "Representing LaunchED Global on campus, promoting entrepreneurship and innovation among students. Organized awareness sessions reaching 200+ students.",
   },
   {
     type: "work",
     title: "Event Coordinator",
     company: "CGC Landran",
     period: "2024 - 2025",
+    order: 3,
     description: "Served as Coordinator for National Science Day 2024 and Freshers 2025. Actively participated in events like Eminence, Code-Rush, HackHeist and Zest-o-Festa.",
+  },
+  {
+    type: "work",
+    title: "MERN Stack Developer Training",
+    company: "Hoping Minds, Mohali",
+    period: "2024 - 45 Days",
+    order: 4,
+    description: "Completed hands-on training in MERN stack, focusing on modern web application architecture. Gained practical experience in frontend and backend integration, REST APIs.",
   },
 ];
 
@@ -32,6 +43,7 @@ const education = [
     title: "B.Tech in Information Technology",
     company: "Chandigarh Group of Colleges, Landran",
     period: "2023 - 2027",
+    order: 1,
     description: "Currently pursuing IT Engineering with 8.15 CGPA. Secured 5 Star badge at HackerRank in Java and 50 days completed badge at LeetCode.",
   },
   {
@@ -39,6 +51,7 @@ const education = [
     title: "Intermediate (12th - BSEB)",
     company: "A.S.R.L.S College, Nabiganj Bazar, Siwan",
     period: "2020 - 2021",
+    order: 2,
     description: "Completed with 71% marks. Secured 2nd Position at District level in GK & GS in 2019.",
   },
   {
@@ -46,6 +59,7 @@ const education = [
     title: "Matriculation (10th - BSEB)",
     company: "+2 High School, Nabiganj Bazar, Siwan",
     period: "2018 - 2019",
+    order: 3,
     description: "Completed with 80% marks.",
   },
 ];
@@ -102,9 +116,8 @@ export const Experience = () => {
     ...experiences.map((e) => ({ ...e, type: "work" as const })),
     ...education.map((e) => ({ ...e, type: "education" as const })),
   ].sort((a, b) => {
-    const yearA = parseInt(a.period.split(" - ")[1] === "Present" ? "2024" : a.period.split(" - ")[1]);
-    const yearB = parseInt(b.period.split(" - ")[1] === "Present" ? "2024" : b.period.split(" - ")[1]);
-    return yearB - yearA;
+    // Sort by order (importance) - lower order number comes first
+    return a.order - b.order;
   });
 
   return (
