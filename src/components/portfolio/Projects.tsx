@@ -12,6 +12,7 @@ interface Project {
   github_url: string | null;
   live_url: string | null;
   featured: boolean;
+  status?: "completed" | "in-progress" | "upcoming";
 }
 
 const projectEmojis: Record<string, string> = {
@@ -19,7 +20,15 @@ const projectEmojis: Record<string, string> = {
   "TOMATO": "🍕",
   "Coffee": "☕",
   "Battery": "🔋",
+  "E-Commerce": "🛒",
   "default": "💻"
+};
+
+const getProjectStatus = (title: string): "completed" | "in-progress" | "upcoming" => {
+  const lowerTitle = title.toLowerCase();
+  if (lowerTitle.includes("coffee")) return "in-progress";
+  if (lowerTitle.includes("e-commerce")) return "upcoming";
+  return "completed";
 };
 
 const getProjectEmoji = (title: string): string => {
@@ -103,9 +112,21 @@ export const Projects = () => {
 
                 {/* Content */}
                 <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    {getProjectStatus(project.title) === "in-progress" && (
+                      <span className="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-500 rounded-full font-medium">
+                        Currently Working
+                      </span>
+                    )}
+                    {getProjectStatus(project.title) === "upcoming" && (
+                      <span className="px-2 py-1 text-xs bg-blue-500/20 text-blue-500 rounded-full font-medium">
+                        Upcoming
+                      </span>
+                    )}
+                  </div>
                   <p className="text-muted-foreground text-sm line-clamp-2">
                     {project.description}
                   </p>
