@@ -5,6 +5,13 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const experiences = [
   {
     type: "work",
+    title: "Placement Ambassador",
+    company: "Chandigarh Group of Colleges, Landran",
+    period: "Dec 2025 - Present",
+    description: "Serving as Placement Ambassador, bridging the gap between students and placement opportunities. Facilitating communication between the placement cell and students.",
+  },
+  {
+    type: "work",
     title: "MERN Stack Developer Training",
     company: "Hoping Minds, Mohali",
     period: "2024 - 45 Days",
