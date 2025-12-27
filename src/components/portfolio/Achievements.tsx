@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Trophy, Award, Code, Star, Target, Zap } from "lucide-react";
+import { Trophy, Award, Code, Star, Target, Zap, Calendar } from "lucide-react";
 
 export const Achievements = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const achievements = [
+    {
+      icon: Calendar,
+      title: "LeetCode 50 Days Badge 2025",
+      description: "Solved problems consistently for 50+ days on LeetCode in 2025",
+      color: "from-yellow-500 to-lime-500",
+    },
     {
       icon: Trophy,
       title: "Smart India Hackathon 2024",
