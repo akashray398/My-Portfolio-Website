@@ -23,6 +23,7 @@ import aiVoiceMernSkillected from "@/assets/certificates/ai-voice-mern-skillecte
 import fullstackHopingMinds from "@/assets/certificates/fullstack-hoping-minds.jpeg";
 import bgmiAaveg2k25 from "@/assets/certificates/bgmi-aaveg-2k25.jpeg";
 import deloitteCyberForage from "@/assets/certificates/deloitte-cyber-forage.jpeg";
+import awsCloudSecurity from "@/assets/certificates/aws-cloud-security.jpeg";
 
 interface Certificate {
   id: string;
@@ -60,41 +61,49 @@ const certificates: Certificate[] = [
   },
   {
     id: "4",
+    title: "AWS Academy Graduate - Cloud Security Foundations",
+    issuer: "AWS Academy",
+    date: "September 2024",
+    imageUrl: awsCloudSecurity,
+    credentialUrl: "https://www.credly.com/go/23iRZqkG",
+  },
+  {
+    id: "5",
     title: "Full Stack Development - 45 Days Internship",
     issuer: "Hoping Minds / NSDC",
     date: "June-July 2025",
     imageUrl: fullstackHopingMinds,
   },
   {
-    id: "5",
+    id: "6",
     title: "Software Engineering Job Simulation",
     issuer: "Accenture via Forage",
     date: "September 2025",
     imageUrl: accentureForage,
   },
   {
-    id: "6",
+    id: "7",
     title: "Cyber Job Simulation",
     issuer: "Deloitte via Forage",
     date: "June 2025",
     imageUrl: deloitteCyberForage,
   },
   {
-    id: "7",
+    id: "8",
     title: "AI Agents with MongoDB",
     issuer: "MongoDB",
     date: "August 2025",
     imageUrl: mongodbAiAgents,
   },
   {
-    id: "8",
+    id: "9",
     title: "Introduction to MongoDB (For Students)",
     issuer: "MongoDB",
     date: "July 2025",
     imageUrl: introMongodb,
   },
   {
-    id: "9",
+    id: "10",
     title: "MongoDB - The Complete MongoDB Developers Course",
     issuer: "Udemy",
     date: "November 2025",
@@ -102,7 +111,7 @@ const certificates: Certificate[] = [
     credentialUrl: "https://ude.my/UC-b246dae1-78e8-4e4b-9ddd-f95a63855844",
   },
   {
-    id: "10",
+    id: "11",
     title: "Java Concepts",
     issuer: "Infosys Springboard",
     date: "November 2025",
@@ -110,14 +119,14 @@ const certificates: Certificate[] = [
     credentialUrl: "https://verify.onwingspan.com",
   },
   {
-    id: "11",
+    id: "12",
     title: "Introduction to Flutter Course",
     issuer: "Simplilearn SkillUp",
     date: "July 2025",
     imageUrl: flutterSimplilearn,
   },
   {
-    id: "12",
+    id: "13",
     title: "GIT, GitLab, GitHub Fundamentals for Software Developers",
     issuer: "Udemy",
     date: "July 2025",
@@ -125,56 +134,56 @@ const certificates: Certificate[] = [
     credentialUrl: "https://ude.my/UC-23ee7eab-f365-49ee-8d34-cd91d3bb87bf",
   },
   {
-    id: "13",
+    id: "14",
     title: "Build an AI Voice Assistant with MERN Stack!",
     issuer: "SkillEcted Campus Program",
     date: "July 2025",
     imageUrl: aiVoiceMernSkillected,
   },
   {
-    id: "14",
+    id: "15",
     title: "Smart India Hackathon 2024 - Team DigiDreamers",
     issuer: "CGC College of Engineering",
     date: "September 2024",
     imageUrl: sih2024,
   },
   {
-    id: "15",
+    id: "16",
     title: "Smart India Hackathon 2023 - Team Law Legacy Inforcers",
     issuer: "CEC-CGC Landran",
     date: "2023",
     imageUrl: sih2023,
   },
   {
-    id: "16",
+    id: "17",
     title: "HackHeist - Certificate of Appreciation",
     issuer: "CGC Landran",
     date: "2024",
     imageUrl: hackheist,
   },
   {
-    id: "17",
+    id: "18",
     title: "Logo Making Competition",
     issuer: "Event Participation",
     date: "August 2024",
     imageUrl: logoCompetition,
   },
   {
-    id: "18",
+    id: "19",
     title: "Zest-O-fiesta 2024 - Certificate of Participation",
     issuer: "CEC-CGC Landran",
     date: "2024",
     imageUrl: zestOFiesta,
   },
   {
-    id: "19",
+    id: "20",
     title: "BGMI Event - EMINECE 2K24",
     issuer: "CEC-CGC Landran, Dept. of IT",
     date: "2024",
     imageUrl: bgmiEminece,
   },
   {
-    id: "20",
+    id: "21",
     title: "Tournament Takedown (BGMI) - AAVEG 2K25",
     issuer: "CGC-COE Landran, Kerberos Club",
     date: "March 2025",
